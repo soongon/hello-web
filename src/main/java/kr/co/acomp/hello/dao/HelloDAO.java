@@ -1,4 +1,4 @@
-package kr.co.acomp.hello;
+package kr.co.acomp.hello.dao;
 
 public class HelloDAO {
 	
