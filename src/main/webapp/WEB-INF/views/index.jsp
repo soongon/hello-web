@@ -6,10 +6,10 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>index page</title>
 	<!-- link style sheet -->
-	<link rel="stylesheet" href="">
+	<link rel="stylesheet" href="/hello-web/resources/styles/style.css">
 </head>
 <body>
 	<h1>Spring Index page</h1>
-	<img alt="스프링 이미지" src="">
+	<img alt="스프링 이미지" src="/hello-web/resources/images/spring.png">
 </body>
 </html>

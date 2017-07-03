@@ -22,7 +22,7 @@ public class BbsController {
 	@Autowired
 	private BbsService bbsService;
 	
-	@GetMapping("")
+	@GetMapping("") 
 	public String index() {
 		return "index";
 	}
