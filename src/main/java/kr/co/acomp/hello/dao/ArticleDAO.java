@@ -11,4 +11,9 @@ public class ArticleDAO {
 		System.out.println(article);
 	}
 
+	public Article selectArticleById(String articleId) {
+		
+		Article article = new Article(10, "lee", "test", "테스트입니다.");
+		return article;
+	}
 }
