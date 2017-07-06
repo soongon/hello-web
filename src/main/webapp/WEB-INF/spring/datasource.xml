@@ -5,14 +5,13 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
-	<context:component-scan base-package="kr.co.acomp.hello"/>
+	<context:property-placeholder location="classpath:config/database.properties"/>
 	
-	<bean id="helloService" class="kr.co.acomp.hello.service.HelloService">
-		<property name="helloDAO" ref="helloDAO"/>
-		<property name="anotherDAO" ref="anotherDAO"/>
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
+		<property name="driverClass" value="${db.driverClass}" />
+		<property name="url" value="${db.url}" />
+		<property name="username" value="${db.username}" />
+		<property name="password" value="${db.password}" />
 	</bean>
-	
-	<bean id="helloDAO" class="kr.co.acomp.hello.dao.HelloDAO" />
-	<bean id="anotherDAO" class="kr.co.acomp.hello.dao.AnotherDAO"/>
 	
 </beans>
