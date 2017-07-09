@@ -38,8 +38,8 @@ public class BbsController {
 	@ResponseBody
 	public Article write(@RequestBody Article article) {
 		
-		Article a = article;
-		return a;
+		bbsService.registArticle(article);
+		return article;
 	}
 	
 //	@GetMapping("/{articleId}")

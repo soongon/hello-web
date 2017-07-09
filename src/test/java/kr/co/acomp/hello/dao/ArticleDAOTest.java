@@ -14,24 +14,28 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import kr.co.acomp.hello.vo.Article;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("file:src/main/webapp/WEB-INF/spring/*.xml")
+@ContextConfiguration(value={
+		"file:src/main/webapp/WEB-INF/spring/root-context.xml",
+		"file:src/main/webapp/WEB-INF/spring/datasource.xml"})
 public class ArticleDAOTest {
 	
 	@Autowired
 	private ArticleDAO dao;
 	
 	@Test
+	@Ignore
 	public void testInsertArticle() {
-		dao.insertArticle(null);
+		Article article = new Article(2, "lee", "test", "테스트입니다.");
+		dao.insertArticle(article);
 	}
 	
 	@Test
-	@Ignore
 	public void testSelectArticleById() {
 		
-		Article article = dao.selectArticleById(null);
+		Article article = dao.selectArticleById("2");
+		System.out.println(article);
 		
-		Assert.assertTrue(article.getAuthor().equals("leee"));
+		Assert.assertTrue(article.getAuthor().equals("lee"));
 	}
 
 }
